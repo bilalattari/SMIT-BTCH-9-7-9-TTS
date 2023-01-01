@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Book Your Tour</h1>
+    <form>
+      <p></p>
+      <h4>Select Tour Type</h4>
+
+      <fieldset>
+        <legend>Tour Information</legend>
+        <select name="tourtype">
+          <option value="">Select type</option>
+          <option value="vip">VIP</option>
+          <option value="3star">3 Star</option>
+          <option value="economy">Economy</option>
+        </select>
+
+        <p>
+          Please select the facilities you needed in the tour :
+          <br />
+          <input type="checkbox" name="facilities" value="breakfast" checked />
+          Breakfast
+          <br />
+          <input type="checkbox" name="facilities" value="jeep" />Jeep Tour
+          <br />
+          <input
+            type="checkbox"
+            name="facilities"
+            value="separateroom"
+          />Separate Room
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personal Info</legend>
+        <p>
+          Please select your gender:
+          <br />
+          <input type="radio" name="gender" value="male" checked /> Male
+          <br />
+          <input type="radio" name="gender" value="female" />Female
+        </p>
+
+        <p>
+          <label for="username">Your Name</label>
+          <input required name="username" placeholder="User Name" type="text" />
+        </p>
+
+        <p>
+          <b>Email</b>
+          <input required name="email" placeholder="User Email" type="email" />
+        </p>
+
+        <p>
+          <b>If you have any website enter url</b>
+          <input required name="url" placeholder="Web url" type="url" />
+        </p>
+
+        <p>
+          <b>User Number</b>
+          <input placeholder="User Number" type="number" />
+        </p>
+
+        <p>
+          <b>CNIC</b>
+          <input
+            placeholder="4210192929"
+            type="text"
+            minlength="4"
+            maxlength="14"
+          />
+        </p>
+
+        <p>
+          <b>Tour Date</b>
+          <input placeholder="Tour Date" type="date" />
+        </p>
+
+        <p>
+          <b>Description</b>
+          <textarea
+            rows="5"
+            cols="50"
+            placeholder="Anything you want to add about the tour"
+          ></textarea>
+        </p>
+
+        <p>
+          <b>You have to upload your CNIC for security reason</b>
+          <input type="file" />
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="submit"  value="Subimt Information"/>
+      </p>
+    </form>
+  </body>
+</html>

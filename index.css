@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("fonts/Poppins-Regular.ttf");
+}
+
+* {
+  font-family: Poppins-Regular;
+}
+
+.trip_header_div {
+  background-color: #cfdae6;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+input {
+  margin: 0 auto;
+  display: block;
+  height: 60px;
+  border-radius: 50px;
+  width: 400px;
+  padding-left: 10px;
+  /* margin-left: 600px; */
+}
+
+p {
+  /* line-height: 41px;
+  text-align: justify;
+  vertical-align: top;
+  text-indent: 40px; */
+}
+
+.box {
+  height: 200px;
+  max-width: 800px;
+  min-width: 500px;
+  background-color: brown;
+  margin: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.card_image {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* .box_image {
+  display: flex;
+  justify-content: center;
+} */
+
+.box-child {
+  height: 190px;
+  width: 500px;
+  background-color: white;
+  /* margin: 0 auto; */
+}
+
+/* p::first-line {
+  font-size: 41px;
+}
+
+a:visited {
+  color: black;
+} */
+
+/* * {
+  background-color: orange;
+}
+
+#top_heading {
+  background-color: blueviolet;
+}
+
+#top_heading {
+  background-color: white;
+} */
+
+.child1 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* h1 {
+  color: aqua;
+} */
+
+/* #top_heading {
+  text-align: center;
+  background-color: orange;
+}
+
+.childSelector  h1 {
+  color: blue;
+}
+
+li a {
+  font-style: italic;
+}
+
+h1~p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+} */
