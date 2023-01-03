@@ -1,0 +1,59 @@
+.container {
+  min-height: 300px;
+  max-height: 600px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.box {
+  height: 200px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+
+}
+
+.box1 {
+  background-color: black;
+  border-top-right-radius: 12px;
+}
+
+.box2 {
+  background-color: orange;
+  border-radius: 25px;
+}
+
+.box3 {
+  background-color: olive;
+  display: none;
+}
+
+.box4 {
+  background-color: salmon;
+  box-shadow: 5px -5px 10px rgb(165, 63, 63);
+}
+
+.box_img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
+h5 {
+  color: white;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  color: white;
+  margin: 0px;
+}
