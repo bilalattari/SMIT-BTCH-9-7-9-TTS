@@ -5,14 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour</title>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
-    <a href="flex.html"> <button>See Flex Button</button></a>
+    <!-- <a href="flex.html"> <button>See Flex Button</button></a>
+    <a href="menu/index.html"> <button>See Menu</button></a> -->
 
     <h1 id="top_heading">Tourism in Pakistan</h1>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+      <div><img src="images/triplogo.svg" class="logo_img" /></div>
+
+      <div>
+        <ul>
+          <li>
+            <a href="flex.html"
+              ><i class="fa-solid fa-bus"></i> Tour Packages
+            </a>
+          </li>
+          <li>
+            <a href="schedule/index.html"
+              ><i class="fa-regular fa-clock"></i> Tour Schedule
+            </a>
+          </li>
+
+          <li>
+            <a href="sindh.html"
+              ><i class="fa-regular fa-lightbulb"></i> Sindh
+            </a>
+          </li>
+          <li>
+            <a href="punjab.html">
+              <i class="fa-solid fa-sun-plant-wilt"></i> Punjaab</a
+            >
+          </li>
+          <li>
+            <a href="punjab.html">
+              <i class="fa-solid fa-water"></i> Balochistan</a
+            >
+          </li>
+          <li class="show_nested">
+            <i class="fa-solid fa-mountain"></i> KPK
+            <ul class="nested">
+              <li><a href="kpk/hunza.html">Hunza</a></li>
+              <li><a href="kpk/kashmir.html">Kashmir</a></li>
+              <li><a href="kpk/mansehara.html">Mansehra</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div class="trip_header_div">
       <h1>Tours for Everywhere. Find Now!</h1>
@@ -118,69 +170,12 @@
     </div>
 
     <h3>Tour Schedule</h3>
-    <table cellpadding="3" cellspacing="3" border="1px">
-      <thead>
-        <tr>
-          <th></th>
-          <th>5 am - 6 am</th>
-          <th>6 am - 1 pm</th>
-          <th>1pm - 2pm</th>
-          <th>3pm - 8pm</th>
-          <th>8pm - 10pm</th>
-          <th>10pm - 5am</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <th>Monday</th>
-          <td rowspan="3">Namaz , Get Ready</td>
-          <td>Breakshat , Learning</td>
-          <td>Enjoy karen , khelen</td>
-          <td>Esha , Dinner</td>
-          <td>Sojao</td>
-        </tr>
-        <tr>
-          <th>Tuesday</th>
-          <td colspan="2">Breakshat , Learning</td>
-          <td>Zuhr Lunch Enjoy karen , khelen</td>
-          <td>Esha , Dinner</td>
-          <td>Sojao</td>
-        </tr>
-        <tr>
-          <th>Wednesday</th>
-          <td>Breakshat , Learning</td>
-          <td>Zuhr , Lunch</td>
-          <td>Enjoy karen , khelen</td>
-          <td>Esha , Dinner</td>
-          <td>Sojao</td>
-        </tr>
-      </tbody>
-
-      <tfoot>
-        <td colspan="7">Copy Right</td>
-      </tfoot>
-    </table>
+    
 
     <p>
       Pakistan is full of beutiful places with rich custom and culture.Below you
       can see the tourist places according to each province.
     </p>
-
-    <ul>
-      <li>
-        <a href="sindh.html">Sindh </a>
-      </li>
-      <li><a href="punjab.html">Punjaab</a></li>
-      <li>
-        KPK
-        <ul>
-          <li><a href="kpk/hunza.html">Hunza</a></li>
-          <li><a href="kpk/kashmir.html">Kashmir</a></li>
-          <li><a href="kpk/mansehara.html">Mansehra</a></li>
-        </ul>
-      </li>
-    </ul>
 
     <h4>To visit our office follow the map</h4>
     <iframe

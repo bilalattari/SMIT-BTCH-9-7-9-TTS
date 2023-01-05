@@ -8,6 +8,11 @@
   src: url("fonts/Poppins-Regular.ttf");
 }
 
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 * {
   font-family: Poppins-Regular;
 }
@@ -58,11 +63,6 @@ p {
   display: block;
 }
 
-/* .box_image {
-  display: flex;
-  justify-content: center;
-} */
-
 .box-child {
   height: 190px;
   width: 500px;
@@ -70,48 +70,69 @@ p {
   /* margin: 0 auto; */
 }
 
-/* p::first-line {
-  font-size: 41px;
-}
-
-a:visited {
-  color: black;
-} */
-
-/* * {
-  background-color: orange;
-}
-
-#top_heading {
-  background-color: blueviolet;
-}
-
-#top_heading {
-  background-color: white;
-} */
-
 .child1 {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* h1 {
-  color: aqua;
-} */
-
-/* #top_heading {
-  text-align: center;
-  background-color: orange;
+.logo_img {
+  height: 60px;
+  width: 200px;
 }
 
-.childSelector  h1 {
-  color: blue;
+#top_heading {
+  margin-top: 120px;
 }
 
-li a {
-  font-style: italic;
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0px 1px 2px #ccc;
+  margin-bottom: 12px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 98%;
 }
 
-h1~p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-} */
+ul {
+  list-style-type: none;
+}
+
+ul > .show_nested:hover {
+}
+
+.nested {
+  display: none;
+}
+
+li {
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  /* border-radius: 125px; */
+  cursor: pointer;
+}
+
+li:hover {
+  /* background-color: lightgray; */
+  border-bottom-width: 3px;
+  border-bottom-color: green;
+  border-bottom-style: solid;
+  /* text-decoration: underline;
+  text-decoration-color: black; */
+}
+
+i {
+  margin-right: 5px;
+  color: green;
+}
+
+li > a {
+  text-decoration: none;
+  color: black;
+}

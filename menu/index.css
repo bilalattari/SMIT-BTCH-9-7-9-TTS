@@ -1,0 +1,42 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.menu_container {
+  height: 80px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.menu_logo {
+  height: 50px;
+  width: 200px;
+}
+
+i {
+  padding-right: 5px;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  /* width: 80px; */
+  text-align: center;
+  padding: 5px;
+  padding: 10px 10px;
+  color: black;
+  cursor: pointer;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 125px;
+  margin-right: 8px;
+  font-size: 17px;
+}
+
+li:hover {
+  background-color: rgb(145, 230, 217);
+}
