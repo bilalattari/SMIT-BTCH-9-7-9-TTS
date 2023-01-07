@@ -94,15 +94,17 @@ p {
   margin-bottom: 12px;
   background-color: #fff;
   position: fixed;
-  top: 0;
+  /* bottom: 0; */
+  top: 0px;
   width: 98%;
+}
+
+.navbar + ul {
+  position: relative;
 }
 
 ul {
   list-style-type: none;
-}
-
-ul > .show_nested:hover {
 }
 
 .nested {
@@ -135,4 +137,100 @@ i {
 li > a {
   text-decoration: none;
   color: black;
+}
+.show_nested:hover .nested {
+  display: inline;
+}
+
+.nested {
+  position: absolute;
+  min-height: 100px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px #ccc;
+  right: 10px;
+  top: 60px;
+}
+
+.nested > li {
+  display: block;
+  margin: 0px;
+}
+
+.nested > li > a {
+  margin: 0px;
+}
+
+.tour_karachi {
+  text-align: left;
+  padding-left: 20px;
+}
+.tour_karachi > h4 {
+  font-size: 25px;
+  margin: 0px;
+}
+
+.tour_karachi > p {
+  text-align: left;
+}
+
+.karachi_card {
+  height: 350px;
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin: 3px 5px;
+  position: relative;
+}
+.karachi_card_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.karachi_card:hover {
+  opacity: 0.8;
+}
+
+.karachi_card_img {
+  height: 230px;
+  width: 100%;
+}
+
+.karachi_card_heading,
+.karachi_card_desc {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 12px;
+}
+
+.karachi_card_heading {
+  font-size: 18px;
+  padding-top: 5px;
+}
+.karachi_card_desc {
+  padding-top: 15px;
+}
+
+.karachi_heart {
+  background-color: #fff;
+  box-shadow: 1px 1px 1px #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 100;
+  
+}
+
+.karachi_heart > i {
+  color: #000;
+  margin-right: 0px;
+  font-size: 25px;
 }
