@@ -15,3 +15,19 @@ td,th{
 h1{
     text-align: center;
 }
+
+.logo_img{
+    height: 60px;
+    width: 120px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+li{
+    display: inline-block;
+    list-style-type: none;
+}

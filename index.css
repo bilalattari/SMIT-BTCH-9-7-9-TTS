@@ -84,7 +84,7 @@ p {
 }
 
 .navbar {
-  height: 80px;
+  min-height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,8 +114,8 @@ ul {
 li {
   display: inline-block;
   color: black;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   /* border-radius: 125px; */
   cursor: pointer;
 }
@@ -183,6 +183,7 @@ li > a {
   cursor: pointer;
   margin: 3px 5px;
   position: relative;
+  z-index: -1;
 }
 .karachi_card_container {
   display: flex;
@@ -225,8 +226,6 @@ li > a {
   position: absolute;
   right: 10px;
   top: 10px;
-  z-index: 100;
-  
 }
 
 .karachi_heart > i {
@@ -234,3 +233,58 @@ li > a {
   margin-right: 0px;
   font-size: 25px;
 }
+
+.menu {
+  font-size: 40px;
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+ 
+  /* .karachi_card_container {
+    justify-content: space-around;
+  } */
+
+  ul {
+    display: none;
+  }
+  .menu{
+    display: inline-block;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+
+  .menu:hover  {
+    display: inline-block;
+    visibility: visible;
+    color: aquamarine;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .karachi_card {
+    width: 90%;
+  }
+}
+
+/* @media screen and (max-width: 650px) {
+  .karachi_card_container {
+    justify-content: center;
+  }
+  .karachi_card {
+    width: 80%;
+    height: 350px;
+  }
+  input {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .karachi_card {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+} */
