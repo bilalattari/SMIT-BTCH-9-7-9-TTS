@@ -52,25 +52,63 @@ function square(a) {
 // sum(120 , 80)
 // sum(180 , 80)
 
-function getDiscount(total, disc) {
-    var discountAmount = (disc * total) / 100
-    return discountAmount
+// function getPercentage(total, disc) {
+//     var amount = (disc * total) / 100
+//     return amount
+// }
+
+// function getTotalAmount() {
+//     var biryaniRate = +document.getElementById('biryani').value
+//     var biryaniNo = +document.getElementById('biryaniNo').value
+//     var coldDrink = +document.getElementById('cd').value
+//     var coldDrinkNo = +document.getElementById('cdNo').value
+//     var discount = +document.getElementById('disc').value
+
+//     var total = (biryaniNo * biryaniRate) + (coldDrink * coldDrinkNo)
+//     var discountAmount = getPercentage(total, discount)
+//     var amountAfterDiscount = total - discountAmount
+
+//     document.getElementById('total').innerText = 'Total Amount : ' + amountAfterDiscount
+
+// }
+
+function calculateRectangleArea() {
+    var height = document.getElementById('height').value
+    var width = document.getElementById('width').value
+    if (height === '' || width === '') {
+        alert('Please fill height and width')
+    } else {
+        var area = height * width
+        document.getElementById('area').innerText = 'Area : ' + area
+    }
 }
 
-function getTotalAmount() {
-    var biryaniRate = +document.getElementById('biryani').value
-    var biryaniNo = +document.getElementById('biryaniNo').value
-    var coldDrink = +document.getElementById('cd').value
-    var coldDrinkNo = +document.getElementById('cdNo').value
-    var discount = +document.getElementById('disc').value
 
-    var total = (biryaniNo * biryaniRate) + (coldDrink * coldDrinkNo)
-    var discountAmount = getDiscount(total, discount)
-    var amountAfterDiscount = total - discountAmount
-
-    document.getElementById('total').innerText = 'Total Amount : ' + amountAfterDiscount
-
+function sum(a, b) {
+    var total = a + b
+    return total
 }
 
 
+
+console.log(sum(12, 10))
+
+var totalOfTwoValue = sum(25, 50)
+
+var numbers = [12, 20, 50, 18.90, 39, 20, 01, 180, 75, 60]
+
+function giveLargestNumber() {
+    var lgNumber = 0
+    for (var i = 0; i < numbers.length; i++) {
+
+        console.log(lgNumber, numbers[i])
+        if (numbers[i] > lgNumber) {
+            lgNumber = numbers[i]
+        }
+    }
+    return lgNumber
+}
+
+var largestNumber = giveLargestNumber()
+console.log('largestNumber->', largestNumber)
 
