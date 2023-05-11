@@ -1,0 +1,148 @@
+/* .box {
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+
+.redBox {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+} */
+
+/* .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    transition: transform 1s;
+} */
+
+/* //styling for 3D Cube transforms / animations on face select (on roll) */
+/* .cube.show-1 {
+    transform: translateZ(-50px) rotateY(0deg);
+}
+
+.cube.show-2 {
+    transform: translateZ(-50px) rotateY(-180deg);
+}
+
+.cube.show-3 {
+    transform: translateZ(-50px) rotateY(-90deg);
+}
+
+.cube.show-4 {
+    transform: translateZ(-50px) rotateY(90deg);
+}
+
+.cube.show-5 {
+    transform: translateZ(-50px) rotateX(-90deg);
+}
+
+.cube.show-6 {
+    transform: translateZ(-50px) rotateX(90deg);
+}
+
+/* //universal style for cube faces  */
+/* .cube__face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    line-height: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}  */
+
+/* //individual styling for each numbers face  */
+/* .cube__face--1 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--3 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--2 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--4 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--5 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--6 {
+    background: black;
+    opacity: 0.75;
+}
+
+.cube__face--1 {
+    transform: rotateY(0deg) translateZ(50px);
+}
+
+.cube__face--2 {
+    transform: rotateY(180deg) translateZ(50px);
+}
+
+.cube__face--3 {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.cube__face--4 {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.cube__face--5 {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.cube__face--6 {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+label {
+    margin-right: 5px;
+}
+
+.scene {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    perspective: 300px;
+} */
+
+
+.img_box {
+    padding: 20px;
+    background-color: red;
+    display: inline-block;
+}
+
+.img_box_large {
+    padding: 30px;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: red;
+}
