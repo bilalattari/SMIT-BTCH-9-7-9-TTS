@@ -1,3 +1,5 @@
+
+
 // function sayHelloWorld() {
 //     alert('Hello World')
 // }
@@ -26,17 +28,21 @@
 // checkBtn.addEventListener('click' , function(){alert('Click on Button')})
 // function onMouseOnBox() {
 
+
 //     imgBox.className = imgBox.className + ' ' + 'img_box_large'
 //     img.src = 'https://media.istockphoto.com/id/1021776274/photo/says.jpg?b=1&s=170667a&w=0&k=20&c=4Q_Dnf0oQ1r0IVZDNiERAtAffm913TTqeJ5OkGfac_E='
 
 // }
 // function onMouseOutOnBox() {
 
+
+
 //     imgBox.className = 'img_box'
 //     img.src = 'https://images.unsplash.com/photo-1646354380497-92a78ba8dcd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2luZ2xlJTIwZGljZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
 
 // }
 // getImageName(1)
+
 
 // var div = document.getElementById('box').style.width = '600px'
 
@@ -71,6 +77,7 @@
 //     currentClass = showClass;
 // }
 
+
 //increment decrement example
 
 // var plus = document.getElementById('plus')
@@ -102,33 +109,22 @@
 
 // document.getElementById('abc').style.backgroundColor = ''
 
-var firstNameInput = document.getElementById('first')
-var lastNameInput = document.getElementById('last')
-var submitBtn = document.getElementById('submit')
+var isBold = false
+var boldBtn = document.getElementById('boldBtn')
+var txtArea = document.getElementById('txtArea')
+boldBtn.addEventListener('click', makeTextBold)
 
-firstNameInput.addEventListener('focus', changeBgColor)
-firstNameInput.addEventListener('blur', changeBlurBgColor)
+function makeTextBold() {
+    if (isBold) {
+        txtArea.style.fontWeight = '500'
+        boldBtn.style.fontWeight = '500'
+        isBold = false
+        txtArea.style.textAlign = 'right'
 
-submitBtn.addEventListener('click', getInputValue)
-
-function changeBgColor (event) {
-  firstNameInput.style.backgroundColor = 'red'
-  firstNameInput.style.borderColor = 'black'
-  firstNameInput.style.color = '#fff'
-}
-
-function changeBlurBgColor () {
-  firstNameInput.style.backgroundColor = '#fff'
-  firstNameInput.style.borderColor = 'black'
-  firstNameInput.style.color = '#000'
-}
-
-function getInputValue () {
-  //check function is working
-  // alert('Function chal rhaa he ')=
-  // take value from input
-  //   console.log(firstNameInput.value + ' ' + lastNameInput.value)
-  // give value from input
-  //   firstNameInput.value = 'Bilal'
-  //   lastNameInput.value = 'Raza'
+    } else {
+        txtArea.style.fontWeight = 'bold'
+        boldBtn.style.fontWeight = 'bold'
+        txtArea.style.textAlign = 'left'
+        isBold = true
+    }
 }
