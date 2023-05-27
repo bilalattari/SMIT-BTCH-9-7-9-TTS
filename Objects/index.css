@@ -1,0 +1,21 @@
+.userbox{
+    min-height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 1px 1px 1px 1px #ccc ;
+}
+
+h6{
+    padding: 0px;
+    margin: 0px;
+}
+
+.userImg{
+    height: 100px;
+    width: 100px;
+    border-radius: 125px;
+}
