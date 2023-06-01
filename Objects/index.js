@@ -35,37 +35,154 @@
 // console.log('x->', x)
 // console.log('y->', y)
 
-var container = document.getElementById('container')
+// var container = document.getElementById('container')
 
-var students = [
-    {
-        name: 'Faiz',
-        age: 20,
-        fatherName: 'Khan',
-        image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-        name: 'ABDUL',
-        age: 15,
-        fatherName: 'Khan',
-        image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-        name: 'Abc',
-        age: 15,
-        fatherName: 'Khan',
-        image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-    }
-]
+// var students = [
+//     {
+//         name: 'Faiz',
+//         age: 20,
+//         fatherName: 'Khan',
+//         image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+//     },
+//     {
+//         name: 'ABDUL',
+//         age: 15,
+//         fatherName: 'Khan',
+//         image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+//     },
+//     {
+//         name: 'Abc',
+//         age: 15,
+//         fatherName: 'Khan',
+//         image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+//     }
+// ]
 
-for (var i = 0; i < students.length; i++) {
+// for (var i = 0; i < students.length; i++) {
 
-    var userBox = `<div class = 'userbox'>
-    <img src=${students[i].image} class = 'userImg' />
-    <h6>Name :  ${students[i].name}</h6>
-    <h6>Father Name :  ${students[i].fatherName}</h6>
-    <h6>Age :  ${students[i].age}</h6>
-    </div>`
+//     var userBox = `<div class = 'userbox'>
+//     <img src=${students[i].image} class = 'userImg' />
+//     <h6>Name :  ${students[i].name}</h6>
+//     <h6>Father Name :  ${students[i].fatherName}</h6>
+//     <h6>Age :  ${students[i].age}</h6>
+//     </div>`
 
-    container.innerHTML += userBox
+//     container.innerHTML += userBox
+// }
+
+
+
+
+function Plan(name, price) {
+    this.planName = name
+    this.price = price
+
 }
+
+Plan.prototype.sayHelloWorld = function () {
+    console.log('Hello world')
+    return 'Hello worlds'
+}
+
+let plan1 = new Plan('Basic', 500)
+let plan2 = new Plan('Standard', 1000)
+let plan3 = new Plan('Premium', 1400)
+
+console.log('plan1->', plan1.sayHelloWorld())
+console.log('plan2->', plan2, plan3)
+plan3.newProperty = 'New Property'
+
+
+var userResult = [
+    {
+        name: "John Doe",
+        results: [
+            { subject: "Math", marks: 85 },
+            { subject: "English", marks: 92 },
+            { subject: "Science", marks: 78 },
+            // Add more subjects and marks for John Doe
+        ]
+    },
+    {
+        name: "Jane Smith",
+        results: [
+            { subject: "Math", marks: 90 },
+            { subject: "English", marks: 88 },
+            { subject: "Science", marks: 76 },
+            // Add more subjects and marks for Jane Smith
+        ]
+    },
+    {
+        name: "Alice Johnson",
+        results: [
+            { subject: "Math", marks: 82 },
+            { subject: "English", marks: 95 },
+            { subject: "Science", marks: 88 },
+            // Add more subjects and marks for Alice Johnson
+        ]
+    },
+    {
+        name: "Robert Davis",
+        results: [
+            { subject: "Math", marks: 78 },
+            { subject: "English", marks: 82 },
+            { subject: "Science", marks: 79 },
+            // Add more subjects and marks for Robert Davis
+        ]
+    },
+    {
+        name: "Emily Wilson",
+        results: [
+            { subject: "Math", marks: 92 },
+            { subject: "English", marks: 86 },
+            { subject: "Science", marks: 94 },
+            // Add more subjects and marks for Emily Wilson
+        ]
+    },
+    {
+        name: "Michael Brown",
+        results: [
+            { subject: "Math", marks: 87 },
+            { subject: "English", marks: 90 },
+            { subject: "Science", marks: 83 },
+            // Add more subjects and marks for Michael Brown
+        ]
+    },
+    {
+        name: "Olivia Taylor",
+        results: [
+            { subject: "Math", marks: 79 },
+            { subject: "English", marks: 91 },
+            { subject: "Science", marks: 84 },
+            // Add more subjects and marks for Olivia Taylor
+        ]
+    },
+    {
+        name: "James Anderson",
+        results: [
+            { subject: "Math", marks: 86 },
+            { subject: "English", marks: 84 },
+            { subject: "Science", marks: 90 },
+            // Add more subjects and marks for James Anderson
+        ]
+    },
+    {
+        name: "Sophia Martinez",
+        results: [
+            { subject: "Math", marks: 93 },
+            { subject: "English", marks: 79 },
+            { subject: "Science", marks: 88 },
+            // Add more subjects and marks for Sophia Martinez
+        ]
+    },
+    {
+        name: "Benjamin Thomas",
+        results: [
+            { subject: "Math", marks: 88 },
+            { subject: "English", marks: 83 },
+            { subject: "Science", marks: 91 },
+            // Add more subjects and marks for Benjamin Thomas
+        ]
+    }
+];
+
