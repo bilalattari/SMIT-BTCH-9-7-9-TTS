@@ -72,26 +72,40 @@
 
 
 
-
 function Plan(name, price) {
     this.planName = name
     this.price = price
-
+    this.hello = function () {
+        console.log(`Hello ${name}`)
+    }
 }
 
-Plan.prototype.sayHelloWorld = function () {
-    console.log('Hello world')
-    return 'Hello worlds'
-}
+// Plan.prototype.sayHelloWorld = function () {
+//     console.log('Hello world')
+//     return 'Hello worlds'
+// }
 
 let plan1 = new Plan('Basic', 500)
 let plan2 = new Plan('Standard', 1000)
 let plan3 = new Plan('Premium', 1400)
 
-console.log('plan1->', plan1.sayHelloWorld())
-console.log('plan2->', plan2, plan3)
-plan3.newProperty = 'New Property'
+console.log('plan1->', plan2.hello())
 
+// console.log('plan2->', plan2, plan3)
+// plan3.newProperty = 'New Property'
+
+
+
+var obj = {}
+
+var studentChart = document.getElementById('chart')
+
+var x = {
+    one: 'one'
+}
+var y = x
+
+y.two = 'two'
 
 var userResult = [
     {
@@ -185,4 +199,54 @@ var userResult = [
         ]
     }
 ];
+
+for (var i = 0; i < userResult.length; i++) {
+
+    var result = userResult[i]
+
+    var mathsNumber = result.results[0].marks
+    var engNumber = result.results[1].marks
+    var sciNumber = result.results[2].marks
+
+    var total = mathsNumber + engNumber + sciNumber
+
+    result.total = total
+
+    var perc = (total / 300) * 100
+
+    var resultRow = `<tr>
+    <td>${i + 1}</td>
+    <td>${result.name}</td>
+    <td>${mathsNumber}</td>
+    <td>${engNumber}</td>
+    <td>${sciNumber}</td>
+    <td>${total}</td>
+    <td>${perc.toFixed(2)}</td>
+</tr>`
+
+    studentChart.innerHTML += resultRow
+}
+
+// function abc() {
+//     return 'abc'
+// }
+
+// console.log(abc())
+
+// var arrow = () => 'return in arrow function'
+
+// console.log(arrow())
+
+var sortedArray = userResult.sort(function (a, b) {
+    return b.total - a.total
+})
+document.getElementById('first').innerText = '1st :' + sortedArray[0].name
+document.getElementById('second').innerText = '2nd :' + sortedArray[1].name
+document.getElementById('third').innerText = 'Third :' + sortedArray[2].name
+
+console.log('sortedArray->', sortedArray)
+
+
+
+
 

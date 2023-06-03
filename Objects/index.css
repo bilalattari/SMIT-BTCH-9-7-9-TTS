@@ -19,3 +19,9 @@ h6{
     width: 100px;
     border-radius: 125px;
 }
+
+td , th {
+    border: 1px solid black;
+    font-size: 15px;
+
+}
