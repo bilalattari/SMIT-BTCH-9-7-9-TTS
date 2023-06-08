@@ -1,401 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Food Web</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <!-- navbar -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Food Web</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Food Dishes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-    <!-- cards -->
-    <div class="container">
-      <h2 class="my-4 text-center">Famouse Dishes In Your Area</h2>
+<body>
+  <!-- navbar -->
 
-      <div class="row justify-content-center">
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Food Web</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Food Dishes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
 
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="my-4 text-center">Trending Dishes</h2>
-
-      <div class="row justify-content-center">
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="flip-right"
-          class="col-12 col-md-6 col-lg-4 col-xl-3 my-2"
-        >
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UGl6emF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Lava Pizza</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="fooddetail.html" class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-        </div>
+          <li class="nav-item">
+            <a id = 'cart'  href="cart.html" class="nav-link" >Cart</a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <div class="bg-primary d-flex justify-content-around px-2 py-3">
-      <p class=".leads my-0 text-white">Copy Right All Right Reserved</p>
+  <!-- cards -->
+  <div class="container">
+    <h2>Food Dishes</h2>
 
-      <span>
-        <a href="https://twitter.com/officialswit?lang=en">
-          <img src="icons/twitter.svg" height="30px" width="30px" alt="" />
-        </a>
-        <a href="https://twitter.com/officialswit?lang=en">
-          <img src="icons/facebook.svg" height="30px" width="30px" alt="" />
-        </a>
-        <a href="https://twitter.com/officialswit?lang=en">
-          <img src="icons/instagram.svg" height="30px" width="30px" alt="" />
-        </a>
-      </span>
+    <div class="container row justify-content-center" id="foodItemsContainer">
+
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+  </div>
+
+  <script src="index.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>

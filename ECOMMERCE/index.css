@@ -18,6 +18,22 @@ span > a > img {
     cursor: pointer;
 }
 
+.card{
+    margin: 5px !important;
+}
+
 .plusMinusDiv:hover{
     background-color: #ccc;
+}
+
+.img-style {
+    height: 200px !important;
+}
+
+.cartCard{
+    height: 100px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius:5px;
 }
