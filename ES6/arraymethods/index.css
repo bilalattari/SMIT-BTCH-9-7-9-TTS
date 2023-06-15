@@ -1,0 +1,25 @@
+.card {
+    height: 230px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding: 5px;
+}
+
+img {
+    height: 150px;
+    width: 100%;
+}
+
+.chip{
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: lightblue;
+    cursor: pointer;
+    color: black;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}

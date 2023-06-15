@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JAVASCRIPT</h2>
+    <canvas id="myChart"></canvas>
+
+
+    <script>
+        //https://open-meteo.com/
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        async function logJSONData() {
+            const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=24.8607&longitude=67.0011&hourly=temperature_2m&current_weather=true&forecast_days=1&start_date=2023-06-13&end_date=2023-06-13");
+            const jsonData = await response.json();
+            const labels = jsonData.hourly.time;
+            const data = {
+                labels: labels.map((time) => new Date(time).getHours() + ' hr'),
+                datasets: [{
+                    label: 'Day Temperature',
+                    data: jsonData.hourly.temperature_2m,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: data
+            });
+        };
+        logJSONData()
+
+
+    </script>
+
+</body>
+
+</html>
