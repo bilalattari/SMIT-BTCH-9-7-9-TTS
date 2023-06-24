@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="loader" style="height: 100vh; width: vh; display: flex; justify-content: center; align-items: center;">
+        <img height="200px" width="200px" src="https://i.gifer.com/origin/d3/d3f472b06590a25cb4372ff289d81711_w200.gif"
+            alt="">
+    </div>
+
+    <div style="display: none;" id="content_container">
+        <h2>User Content Info</h2>
+        <button id="logout">logout</button>
+    </div>
+
+    <div style="display: none;" id="login_container">
+        <h2>Register User</h2>
+
+        <label>Email <input type="text" id="email"></label>
+        <label>Password <input type="password" id="password"></label>
+        <button id="register_btn">Register</button>
+
+
+        <h2>Login User</h2>
+
+        <label>Email <input type="text" id="email_log"></label>
+        <label>Password <input type="password" id="password_log"></label>
+        <button id="login_btn">Login</button>
+    </div>
+
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
