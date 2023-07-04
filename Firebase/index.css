@@ -3,3 +3,53 @@ td {
   width: 200px;
   margin: 5px;
 }
+
+#container-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
+.card {
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin: 5px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+img {
+  height: 50%;
+  width: 80%;
+  margin: auto 0;
+  display: inline-block;
+}
+
+.chip {
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: lightblue;
+  cursor: pointer;
+  color: black;
+  margin-right: 12px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.load_more{
+  display: block;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+  border-color: red;
+  font-size: 20px;
+  margin: 20px auto;
+}

@@ -23,11 +23,14 @@ import {
 
 const loader = document.getElementById('loader')
 const content_container = document.getElementById('content_container')
-const users_table = document.getElementById('users_table')
+const container_products = document.getElementById('container-products')
 const login_container = document.getElementById('login_container')
 const registerBtn = document.getElementById('register_btn')
 const loginBtn = document.getElementById('login_btn')
 const logoutBtn = document.getElementById('logout')
+const loadMoreBtn = document.getElementById('loadMore')
+
+let numberOfProducts = 5
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAL-r26Yq2l3zBfmY_cLUzFeLk5XJKVZ8s',
@@ -43,7 +46,6 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const db = getDatabase(app)
 const dummyRef = ref(db, 'contactus')
-
 set(dummyRef, { name: 'bilal', email: 'bilal@gmail.com' })
 onAuthStateChanged(auth, user => {
   if (user) {
@@ -52,7 +54,7 @@ onAuthStateChanged(auth, user => {
     loader.style.display = 'none'
     content_container.style.display = 'block'
     login_container.style.display = 'none'
-    getUsersFromFirebaseDatabase()
+    getProductsFromApi()
     // ...
   } else {
     // User is signed out
@@ -67,6 +69,7 @@ onAuthStateChanged(auth, user => {
 registerBtn.addEventListener('click', register)
 loginBtn.addEventListener('click', login)
 logoutBtn.addEventListener('click', logout)
+loadMoreBtn.addEventListener('click', loadMore)
 
 function register () {
   const name = document.getElementById('name').value
@@ -83,7 +86,7 @@ function register () {
       }
       const userRef = ref(db, 'users/' + user.uid)
       set(userRef, obj)
-      getUsersFromFirebaseDatabase()
+      getProductsFromApi()
     })
     .catch(error => {
       const errorCode = error.code
@@ -117,28 +120,28 @@ function logout () {
     })
 }
 
-function getUsersFromFirebaseDatabase () {
-  const usersRef = ref(db, 'users')
+function getProductsFromApi () {
+  console.log('numberOfProducts-->', numberOfProducts)
+  fetch(`https://fakestoreapi.com/products?limit=${numberOfProducts}`)
+    .then(res => res.json())
+    .then(json => {
+      console.log('json->', json)
+      container_products.innerHTML = null
 
-  get(usersRef)
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        // console.log()
-        const users = Object.values(snapshot.val())
-        users_table.innerHTML = null
-        users.forEach(data => {
-          const row = `<tr> <td>${data.name}</td> 
-            <td>${data.fatherName}</td>
-            <td>${data.email}</td>
-            </tr>`
+      json.forEach((data, i) => {
+        //desctructuring
+        const { image, title, price } = data
+        const card = `<div class='card' >
+        <img src =${image} />
+        <h4>${title} </h4>
+        <h4>${price} </h4>
+        </div>`
+        container_products.innerHTML += card
+      })
+    })
+}
 
-          users_table.innerHTML += row
-        })
-      } else {
-        console.log('No data available')
-      }
-    })
-    .catch(error => {
-      console.error(error)
-    })
+function loadMore () {
+  numberOfProducts = numberOfProducts + 5
+  getProductsFromApi()
 }
