@@ -29,6 +29,8 @@ const registerBtn = document.getElementById('register_btn')
 const loginBtn = document.getElementById('login_btn')
 const logoutBtn = document.getElementById('logout')
 const loadMoreBtn = document.getElementById('loadMore')
+const searchInput = document.getElementById('search_input')
+const searchBtn = document.getElementById('search')
 
 let numberOfProducts = 5
 
@@ -70,7 +72,7 @@ registerBtn.addEventListener('click', register)
 loginBtn.addEventListener('click', login)
 logoutBtn.addEventListener('click', logout)
 loadMoreBtn.addEventListener('click', loadMore)
-
+searchBtn.addEventListener('click', searchFunc)
 function register () {
   const name = document.getElementById('name').value
   const fatherName = document.getElementById('fatherName').value
@@ -144,4 +146,23 @@ function getProductsFromApi () {
 function loadMore () {
   numberOfProducts = numberOfProducts + 5
   getProductsFromApi()
+}
+
+function searchFunc () {
+  fetch(`https://dummyjson.com/products/search?q=${searchInput.value}`)
+    .then(res => res.json())
+    .then(json => {
+      container_products.innerHTML = null
+
+      json.products.forEach((data, i) => {
+        //desctructuring
+        const { thumbnail, title, price } = data
+        const card = `<div class='card' >
+    <img src =${thumbnail} />
+    <h4>${title} </h4>
+    <h4>${price} </h4>
+    </div>`
+        container_products.innerHTML += card
+      })
+    })
 }
