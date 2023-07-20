@@ -6,7 +6,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword
 } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js'
-
+import {
+  getStorage,
+  uploadBytes,
+  ref as storageRef,
+  getDownloadURL
+} from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js'
 import {
   getDatabase,
   ref,
@@ -35,8 +40,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const db = getDatabase(app)
+const storage = getStorage(app)
+
 const loader = document.getElementById('loader')
-const content_container = document.getElementById('content_container')
+const class_task_container = document.getElementById('class_task_container')
 const login_container = document.getElementById('login_container')
 const registerBtn = document.getElementById('register_btn')
 const loginBtn = document.getElementById('login_btn')
@@ -44,6 +51,9 @@ const logoutBtn = document.getElementById('logout')
 const senMsgBtn = document.getElementById('send_msg_btn')
 const users_container = document.getElementById('users_container')
 const msgs_container = document.getElementById('msgs')
+const user_img = document.getElementById('user_img')
+let user_img_url = null
+let userInfo = null
 
 let anotherUser = null
 let userUid = null
@@ -53,7 +63,7 @@ onAuthStateChanged(auth, user => {
     loader.style.display = 'none'
     content_container.style.display = 'block'
     login_container.style.display = 'none'
-    getUsers()
+    getUserInfo()
     // ...
   } else {
     // User is signed out
@@ -68,23 +78,25 @@ onAuthStateChanged(auth, user => {
 registerBtn.addEventListener('click', register)
 loginBtn.addEventListener('click', login)
 logoutBtn.addEventListener('click', logout)
-senMsgBtn.addEventListener('click', sendMsg)
+
+user_img.addEventListener('change', uploadImg)
 function register () {
   const name = document.getElementById('name').value
   const fatherName = document.getElementById('fatherName').value
   const reg_email = document.getElementById('email').value
   const reg_password = document.getElementById('password').value
+  var getSelectedValue = document.querySelector('input[name="role"]:checked')
   createUserWithEmailAndPassword(auth, reg_email, reg_password)
     .then(userCredential => {
       const user = userCredential.user
       const obj = {
         name,
         fatherName,
-        email: reg_email
+        email: reg_email,
+        avatar: user_img_url,
+        role: getSelectedValue.defaultValue
       }
-      console.log('user--->', user)
       const userRef = ref(db, `users/${user.uid}`)
-      console.log('userRef--->', userRef)
       set(userRef, obj)
     })
     .catch(error => {
@@ -119,89 +131,31 @@ function logout () {
     })
 }
 
-function sendMsg () {
-  const msg = document.getElementById('msg').value
-  if (!msg) return alert('Please add some msg')
-  const chatId = makeChatId(anotherUser, userUid)
-  console.log('chatId in send msg-->', chatId)
-  const chatIdRef = ref(db, `chats/${chatId}`)
-  const newChatRef = push(chatIdRef)
-  const obj = {
-    msg,
-    from: userUid,
-    to: anotherUser
-  }
-  console.log('obj-->', obj)
-  set(newChatRef, obj)
-  document.getElementById('msg').value = ''
-}
-
-function makeChatId (from, to) {
-  const id = from > to ? `${from}${to}` : `${to}${from}`
-  return id
-}
-
-function chatFunc () {
-  msgs_container.innerHTML = null
-  Array.from(document.getElementsByClassName('chat_card')).forEach(card => {
-    card.style.backgroundColor = '#fff'
-  })
-  this.style.backgroundColor = 'lightblue'
-  anotherUser = this.id
-
-  const chatId = makeChatId(auth.currentUser.uid, this.id)
-  getUserChat(chatId)
-}
-
-function getUserChat (chatId) {
-  const chatRef = ref(db, `chats/${chatId}`)
-  onValue(chatRef, snapshot => {
-    const isDataExist = snapshot.exists()
-    if (isDataExist) {
-      msgs_container.innerHTML = null
-
-      snapshot.forEach(childSnapshot => {
-        const childKey = childSnapshot.key
-        const childData = childSnapshot.val()
-        const userChatCard = `<div class = ${
-          childData.from === userUid ? 'msgfrom' : 'msgTo'
-        } id = ${childKey}> 
-       <h4>${childData.msg}</h4>
-       </div>`
-        // ...
-        msgs_container.innerHTML += userChatCard
+function uploadImg () {
+  const imgRef = storageRef(storage, 'users/' + this.files[0].name)
+  uploadBytes(imgRef, this.files[0]).then(snapshot => {
+    getDownloadURL(imgRef)
+      .then(url => {
+        const userimg = document.getElementById('user_avatar')
+        userimg.src = url
+        user_img_url = url
       })
-    }
+      .catch(err => console.error(err))
   })
 }
 
-function getUsers () {
-  const todoListRef = ref(db, `users`)
-  onValue(
-    todoListRef,
-    snapshot => {
-      const isDataExist = snapshot.exists()
-      console.log('data exist', isDataExist)
-      if (isDataExist) {
-        snapshot.forEach(childSnapshot => {
-          const childKey = childSnapshot.key
-          const childData = childSnapshot.val()
-          const userChatCard = `<div class = 'chat_card' id = ${childKey}> 
-           <h4>${childData.name}</h4>
-           </div>`
-          // ...
-          users_container.innerHTML += userChatCard
-          setTimeout(() => {
-            const userCard = document.getElementById(childKey)
-            userCard.addEventListener('click', chatFunc)
-          }, 200)
-        })
+function getUserInfo () {
+  get(child(ref(db), `users/${auth.currentUser.uid}`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val())
+        userInfo = snapshot.val()
+        document.getElementById('user_nav_avatar').src = userInfo.avatar
+      } else {
+        console.log('No data available')
       }
-    },
-    {
-      onlyOnce: true
-    }
-  )
+    })
+    .catch(error => {
+      console.error(error)
+    })
 }
-
-

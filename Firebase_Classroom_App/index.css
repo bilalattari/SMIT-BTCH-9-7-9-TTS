@@ -1,0 +1,170 @@
+h4,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.chat_container {
+  height: 90vh;
+  border: 1px solid #ccc;
+  display: flex;
+}
+
+.users_container {
+  width: 200px;
+  overflow-y: scroll;
+  border-right: 1px solid black;
+}
+
+.chat_div {
+  flex: 1;
+}
+
+.chat_card {
+  padding: 5px;
+  min-height: 50px;
+  border-bottom: 1px solid lightslategray;
+  cursor: pointer;
+}
+
+.chat_card:hover {
+  background-color: lightblue;
+}
+
+.chat_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.msgs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.msg_input > input {
+  width: 80%;
+  margin-left: 10px;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+.msgs > div {
+  margin: 2px 0;
+  width: 200px;
+  padding: 10px;
+  font-size: 15px;
+}
+.msgs > div > h4 {
+  font-size: 12px;
+}
+
+.msgfrom {
+  background-color: lightblue;
+  align-self: flex-start;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.msgTo {
+  background-color: lightcyan;
+  align-self: flex-end;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+img {
+  height: 80px;
+  width: 80px;
+  border-radius: 125px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items li {
+  margin-right: 20px;
+}
+
+.nav-items li:last-child {
+  margin-right: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-items li a:hover {
+  color: #f0f0f0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logout-btn {
+  background-color: #cc0000;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Query for Responsive Design */
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar-left {
+    margin-bottom: 10px;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+
+  .nav-items li {
+    margin-bottom: 10px;
+  }
+}
