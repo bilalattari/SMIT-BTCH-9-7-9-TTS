@@ -1,0 +1,32 @@
+.product_card {
+  height: 340px;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.product_cart {
+  height: 200px;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  display: flex;
+}
+.product_cart > img {
+  height: 180px;
+  width: 40%;
+}
+
+.product_cart > div {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 12px;
+  }
+
+.product_card > img {
+  height: 200px;
+  width: 100%;
+}
