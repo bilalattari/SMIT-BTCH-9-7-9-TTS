@@ -1,3 +1,5 @@
+import {Colors} from '@/constant'
+
 const Card = props => {
   const { product } = props
   const { img, category, name } = product

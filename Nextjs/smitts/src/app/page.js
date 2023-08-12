@@ -1,6 +1,7 @@
+'use client'
 import Card from '@/components/Card'
 import Image from 'next/image'
-
+import { useState } from 'react'
 const product = [
   {
     img:
@@ -41,16 +42,93 @@ const product = [
 ]
 
 export default function Home () {
+  const [todos, setTodos] = useState([])
+  const [todo, setTodo] = useState('')
+  const [isEdit, setIsEdit] = useState(false)
+  const [editIndex, setEditIndex] = useState(null)
+
+  const handleOnChangeTodo = e => {
+    setTodo(e.target.value)
+  }
+
+  const addTodo = () => {
+    if (!todo) return alert('Please add something in todo')
+    let todoUpdate = todos
+    todoUpdate.unshift(todo)
+    setTodos([...todoUpdate])
+    setTodo('')
+  }
+
+  const deleteTodo = ind => {
+    let todoUpdate = todos
+    todoUpdate.splice(ind, 1)
+    setTodos([...todoUpdate])
+  }
+
+  const onEdit = ind => {
+    console.log(todos[ind])
+    setTodo(todos[ind])
+    setEditIndex(ind)
+    setIsEdit(true)
+  }
+
+  const editTodo = () => {
+    let todoUpdate = todos
+    todoUpdate[editIndex] = todo
+    setTodos([...todoUpdate])
+    setIsEdit(false)
+    setEditIndex(null)
+    setTodo('')
+  }
+
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex'>
-        <h2>Hello Next JS</h2>
+    <main className='flex min-h-screen flex-col items-center p-2'>
+      <h1 className='text-3xl font-bold m-3'>Todo App Using Next js</h1>
+
+      <div
+        className={
+          'flex border-slate-500 bg-white p-3 rounded-md  my-2 w-[500px] items-center	 justify-between'
+        }
+      >
+        <input
+          value={todo}
+          onChange={handleOnChangeTodo}
+          placeholder={'Todo'}
+          className={'p-2 w-[400px]'}
+        />
+        <button
+          onClick={() => (isEdit ? editTodo() : addTodo())}
+          className={'p-2 m-2 bg-white border-2 rounded-md'}
+        >
+          {isEdit ? 'Update' : 'Add'}
+        </button>
       </div>
-      <div className='flex flex-wrap -m-4'>
-        {product.map((data, index) => (
-          <Card key={index} product={data} />
-        ))}
-      </div>
+      {todos.map((data, index) => {
+        return (
+          <div
+            className={
+              'flex bg-white p-3 rounded-md  my-2 w-[500px] items-center	 justify-between'
+            }
+            key={index}
+          >
+            <h1>{data}</h1>
+            <span>
+              <button
+                onClick={() => onEdit(index)}
+                className={'p-3 m-2 bg-sky-300 rounded-md'}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => deleteTodo(index)}
+                className={'p-3 m-2 bg-red-600 text-white rounded-md'}
+              >
+                Delete
+              </button>
+            </span>
+          </div>
+        )
+      })}
     </main>
   )
 }
