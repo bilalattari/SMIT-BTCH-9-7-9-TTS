@@ -1,19 +1,26 @@
 
-import { Button, Table, Form, Input } from 'antd';
+import { Button, Space, Table, Form, Input } from 'antd';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
 import { useEffect, useState } from 'react';
-
-
+const { Column } = Table;
 
 
 export default function ExpenseTracker() {
+    const [form] = Form.useForm();
 
-    const [transactions, setTransactions] = useState([])
+    const [transactions, setTransactions] = useState([{
+        created_at: new Date().toLocaleString(),
+        amount: 400,
+        type: 'income',
+        desc: "testing"
+    }])
     const [type, setType] = useState(undefined)
     const [totals, setTotals] = useState({
         income: 0,
         expense: 0,
         profitLoss: 0
     })
+    const [isEdit, setIsEdit] = useState(null)
 
     useEffect(() => {
         if (transactions.length) {
@@ -28,47 +35,46 @@ export default function ExpenseTracker() {
             })
 
             setTotals({ income, expense, profitLoss: income - expense })
-
         }
     }, [transactions])
 
 
     const onFinish = (values) => {
-        console.log(values)
+        if (isEdit !== null) {
 
-        const obj = {
-            ...values,
-            type,
-            created_at: new Date().toLocaleString()
+            transactions[isEdit] = {
+                ...values,
+                type,
+                created_at: new Date().toLocaleString()
+            }
+            setTransactions([...transactions])
+            setIsEdit(null)
+        } else {
+            const obj = {
+                ...values,
+                type,
+                created_at: new Date().toLocaleString()
+            }
+            console.log(obj)
+            setTransactions([obj, ...transactions])
         }
-        console.log(obj)
-        setTransactions([obj, ...transactions])
-
+        form.resetFields()
+        setType(undefined)
     };
 
-    const columns = [
-        {
-            title: 'Date',
-            dataIndex: 'created_at',
-            key: 'created_at',
-        },
-        {
-            title: 'Amount',
-            dataIndex: 'amount',
-            key: 'amount',
-        },
-        {
-            title: 'Description',
-            dataIndex: 'desc',
-            key: 'desc',
-        },
-        {
-            title: 'Type',
-            dataIndex: 'type',
-            key: 'type',
-        },
-    ];
 
+    const edit = (record, ind) => {
+        setIsEdit(ind)
+        form.setFieldsValue({
+            amount: record.amount,
+            desc: record.desc
+        })
+        setType(record.type)
+    }
+    const deleteTransaction = (ind) => {
+        transactions.splice(ind, 1)
+        setTransactions([...transactions])
+    }
 
 
     return (
@@ -100,10 +106,11 @@ export default function ExpenseTracker() {
             </div>
 
             <Form
-                name="basic"
+                name="control-hooks"
                 style={{
                     maxWidth: 600,
                 }}
+                form={form}
                 onFinish={onFinish}
             >
                 <Form.Item
@@ -141,7 +148,7 @@ export default function ExpenseTracker() {
                     }}
                 >
                     <Button htmlType="submit">
-                        Submit
+                        {isEdit !== null ? 'Edit' : 'Submit'}
                     </Button>
                 </Form.Item>
             </Form>
@@ -163,7 +170,24 @@ export default function ExpenseTracker() {
 
             </div>
 
-            <Table style={{ width: "700px" }} dataSource={transactions} columns={columns} />
+            <Table style={{ width: "700px" }} dataSource={transactions}  >
+                <Column dataIndex={'created_at'} key={'created_at'} title='Date' />
+                <Column dataIndex={'amount'} key={'amount'} title='Amount' />
+                <Column dataIndex={'desc'} key={'desc'} title='Description' />
+                <Column dataIndex={'type'} key={'type'} title='Type' />
+                <Column
+                    title="Action"
+                    key="action"
+                    render={(_, record, ind) => {
+                        return (
+                            <Space size="middle">
+                                <a onClick={() => edit(record, ind)}><EditOutlined /></a>
+                                <a onClick={() => deleteTransaction(ind)}><DeleteOutlined /></a>
+                            </Space>
+                        )
+                    }}
+                />
+            </Table>
 
         </div>
     )

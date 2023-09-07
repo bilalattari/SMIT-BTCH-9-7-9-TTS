@@ -1,21 +1,21 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+
 import { Button, Checkbox, Table, Form, Input } from 'antd';
 import { useState } from 'react';
 
 export default function Student() {
-    const form = Form.useFormInstance();
+    
+
     const [students, setStudents] = useState([])
 
     const onFinish = (values) => {
+
+        console.log(values);
         let stu = students
         stu.push(values)
         setStudents([...stu])
     };
 
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
+ 
 
     const columns = [
         {
@@ -40,7 +40,7 @@ export default function Student() {
             className={`flex p-5 min-h-screen flex-col bg-white`}
         >
             <Form
-                form={form}
+         
                 name="basic"
                 labelCol={{
                     span: 8,
@@ -55,7 +55,7 @@ export default function Student() {
                     remember: true,
                 }}
                 onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
+                
                 autoComplete="off"
             >
                 <Form.Item
